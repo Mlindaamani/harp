@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { User } from "./components/User";
 
 export default function Home() {
   return (
@@ -15,8 +16,9 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>app/page.js</code>.
+            Get started by editing <code>app/page.js!</code>.
           </li>
+          <User />
           <li>Save and see your changes instantly.</li>
         </ol>
 
