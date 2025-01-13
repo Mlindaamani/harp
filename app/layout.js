@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Header } from "./components/Header";
+import { HeaderContents } from "./components/HeaderContents";
 
 export const metadata = {
   title: "HomeFix",
@@ -10,9 +10,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="container-fluid m-0 p-0">
-        <Header metadata={metadata} />
-        {children}
+      <body className="m-0 p-0">
+        <header className="bg-primary text-light p-5 d-flex align-items-center">
+          <HeaderContents metadata={metadata} />
+        </header>
+        <main>{children}</main>
+        <footer>
+          <p>This is a footer</p>
+        </footer>
       </body>
     </html>
   );
