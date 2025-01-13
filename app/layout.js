@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 
 export const metadata = {
   title: "HomeFix",
@@ -11,10 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="container-fluid vh-100 m-0 p-0">
+      <body className="container-fluid m-0 p-0">
         <Header metadata={metadata} />
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -5,9 +5,6 @@ export default function Home() {
     <div className="vh-100">
       <main className="p-3  bg-success">
         <UserProfile />
-        <UserProfile />
-        <UserProfile />
-        <UserProfile />
       </main>
     </div>
   );
