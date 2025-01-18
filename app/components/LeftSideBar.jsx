@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Page() {
+export const LeftSideBar = () => {
   return (
     <div>
-      <h1>User Details</h1>
+      <p>LeftSide bar</p>
     </div>
   );
-}
+};
