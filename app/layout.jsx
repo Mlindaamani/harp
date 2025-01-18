@@ -1,17 +1,18 @@
+import "../global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata = {
-  title: "HomeFix",
+  title: "HARP",
   description: "Home repair platform app",
   icons: {
-    icon: "/zeus.jpg",
+    icon: "/repair.svg",
   },
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className="m-0 p-0 vh-100">{children}</body>
+      <body>{children}</body>
     </html>
   );
 };

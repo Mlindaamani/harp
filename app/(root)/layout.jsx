@@ -1,15 +1,17 @@
 import React from "react";
-import { LeftSideBar } from "../components/LeftSideBar";
-import { RightSideBar } from "../components/RightSideBar";
+import { SideBar } from "../components/SideBar";
 
 const RootLayout = ({ children }) => {
   return (
-    <div className="bg-secondary d-flex flex-column vh-100">
-      <main>
-        <LeftSideBar />
-        {children}
-        <RightSideBar />
-      </main>
+    <div className="d-flex flex-column vh-100 container-fluid">
+      <div className="row">
+        <div className="col-auto">
+          <SideBar />
+        </div>
+        <div className="col d-flex bg-white border-start shadow-sm">
+          <main className="p-5 flex-fill">{children}</main>
+        </div>
+      </div>
     </div>
   );
 };

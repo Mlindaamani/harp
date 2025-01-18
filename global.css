@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.nav-link.active {
+  border-right: 8px solid orange;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
