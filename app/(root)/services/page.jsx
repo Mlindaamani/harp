@@ -45,7 +45,7 @@ const Services = () => {
         assumenda aliquam. Quam dolorum expedita est explicabo doloribus! Ipsum
         sint atque expedita perferendis? Autem, nemo! Facilis, sunt.
       </p>
-      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-primary border-5 mb-4">
+      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-danger border-5 mb-4">
         <Image
           src="/database.svg"
           width={50}
@@ -65,7 +65,7 @@ const Services = () => {
         assumenda aliquam. Quam dolorum expedita est explicabo doloribus! Ipsum
         sint atque expedita perferendis? Autem, nemo! Facilis, sunt.
       </p>
-      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-primary border-5 mb-4">
+      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-success border-5 mb-4">
         <Image
           src="/chat.svg"
           width={50}
@@ -85,7 +85,7 @@ const Services = () => {
         assumenda aliquam. Quam dolorum expedita est explicabo doloribus! Ipsum
         sint atque expedita perferendis? Autem, nemo! Facilis, sunt.
       </p>
-      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-primary border-5 mb-4">
+      <p className="p-4 bg-secondary text-light fs-5 rounded-3 mt-2 border-end border-info border-5 mb-4">
         <Image
           src="/support.svg"
           width={50}

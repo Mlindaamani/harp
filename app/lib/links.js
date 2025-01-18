@@ -18,8 +18,8 @@ export const links = [
   },
 
   {
-    route: "/uploads",
-    label: "Uploads",
+    route: "/projects",
+    label: "Projects",
     icon: "/database.svg",
   },
 
