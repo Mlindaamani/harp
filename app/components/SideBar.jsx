@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { links } from "../lib/data";
+import { links } from "../lib/links";
 import { SideBarImage } from "./SideBarImage";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import Image from "next/image";
 export const SideBar = () => {
   const pathName = usePathname();
   return (
-    <div className="sidebar border-start shadow-sm">
+    <div className="sidebar border-bottom shadow-sm mb-5">
       <SideBarImage />
       <hr />
       <ul className="nav flex-column gap-5">
@@ -20,7 +20,9 @@ export const SideBar = () => {
             <li className="nav-item" key={label}>
               <Link
                 className={
-                  isActive ? "nav-link active fw-bold text-warning" : "nav-link"
+                  isActive
+                    ? "nav-link active fw-bold text-warning fs-5"
+                    : "nav-link fs-5 text-secondary"
                 }
                 href={route}
               >

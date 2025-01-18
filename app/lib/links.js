@@ -22,4 +22,27 @@ export const links = [
     label: "Services",
     icon: "/service.svg",
   },
+
+  {
+    route: "/upload",
+    label: "Uploads",
+    icon: "/database.svg",
+  },
+
+  {
+    route: "/upload",
+    label: "Chats",
+    icon: "/chat.svg",
+  },
+
+  {
+    route: "/upload",
+    label: "Clients",
+    icon: "/support.svg",
+  },
+  {
+    route: "/upload",
+    label: "Logout",
+    icon: "/logout.svg",
+  },
 ];

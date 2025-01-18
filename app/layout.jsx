@@ -5,7 +5,7 @@ export const metadata = {
   title: "HARP",
   description: "Home repair platform app",
   icons: {
-    icon: "/repair.svg",
+    icon: "/service.svg",
   },
 };
 
