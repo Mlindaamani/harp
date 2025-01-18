@@ -2,7 +2,7 @@ import React from "react";
 import { LeftSideBar } from "../components/LeftSideBar";
 import { RightSideBar } from "../components/RightSideBar";
 
-const Home = ({ children }) => {
+const RootLayout = ({ children }) => {
   return (
     <div className="bg-secondary d-flex flex-column vh-100">
       <main>
@@ -14,4 +14,4 @@ const Home = ({ children }) => {
   );
 };
 
-export default Home;
+export default RootLayout;

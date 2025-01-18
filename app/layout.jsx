@@ -11,7 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className="m-0 p-0 bg-dark vh-100">{children}</body>
+      <body className="m-0 p-0 vh-100">{children}</body>
     </html>
   );
 };
