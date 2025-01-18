@@ -24,24 +24,24 @@ export const links = [
   },
 
   {
-    route: "/upload",
+    route: "/uploads",
     label: "Uploads",
     icon: "/database.svg",
   },
 
   {
-    route: "/upload",
+    route: "/chats",
     label: "Chats",
     icon: "/chat.svg",
   },
 
   {
-    route: "/upload",
+    route: "/clients",
     label: "Clients",
     icon: "/support.svg",
   },
   {
-    route: "/upload",
+    route: "/logout",
     label: "Logout",
     icon: "/logout.svg",
   },
