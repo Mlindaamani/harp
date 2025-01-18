@@ -12,12 +12,6 @@ export const links = [
   },
 
   {
-    route: "/profile",
-    label: "Profile",
-    icon: "/profile.svg",
-  },
-
-  {
     route: "/services",
     label: "Services",
     icon: "/service.svg",
@@ -37,7 +31,7 @@ export const links = [
 
   {
     route: "/clients",
-    label: "Clients",
+    label: "My Clients",
     icon: "/support.svg",
   },
   {
