@@ -16,7 +16,7 @@ const Projects = () => {
       <div>
         <Link className="btn btn-secondary p-3 m-5" href="/projects/new">
           <Image
-            src="/add.svg"
+            src="/post.svg"
             width={24}
             height={24}
             className="text-light"
