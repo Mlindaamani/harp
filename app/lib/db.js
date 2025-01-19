@@ -1,11 +1,4 @@
 import mongoose from "mongoose";
-const MONGODB_URI = process.env.MONGO_URI;
-
-if (!MONGODB_URI) {
-  throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env"
-  );
-}
 
 // Keep track of the connection state
 let isConnected;
@@ -18,10 +11,7 @@ export const connectToMongoDb = async () => {
 
   try {
     // Connect to MongoDB
-    const db = await mongoose.connect(MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const db = await mongoose.connect(process.env.MONGO_URI);
 
     // Check whether we have already connected: (1 means connected)
     isConnected = db.connection.readyState === 1;
