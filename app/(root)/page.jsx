@@ -10,7 +10,7 @@ const HomeFix = () => {
           We Connect Household With Qualified Repair{" "}
           <span className="fw-bold text-warning">Professionals</span>
         </h1>
-        <Image src="/support.svg" width={300} height={300} alt="hero" />
+        <Image src="/home.svg" width={300} height={300} alt="hero" />
       </div>
 
       <div className="mt-5 p-5 text-center bg-white-subtle p-5 rounded-3">
