@@ -19,7 +19,7 @@ const Projects = () => {
             src="/post.svg"
             width={24}
             height={24}
-            className="text-light"
+            className="text-light m-2"
             alt="Add"
           />
           Add Projet
