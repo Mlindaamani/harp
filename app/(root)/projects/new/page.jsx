@@ -2,7 +2,6 @@
 import { createProject } from "@/app/actions/project";
 import { useActionState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 const NewProject = () => {
   const initialState = { message: "" };
@@ -22,16 +21,7 @@ const NewProject = () => {
   };
   return (
     <div className="p-4 mt-4 rounded-4 bg-white-subtle">
-      <Image
-        src="/add.svg"
-        width={50}
-        height={50}
-        className="mb-3"
-        alt="Add"
-      />
-
-      {/* <Image fill src="/add.svg" alt="Add"/> */}
-
+      <Image src="/add.svg" width={50} height={50} className="mb-3" alt="Add" />
       <form onSubmit={handleSubmit}>
         <div className="mb-3 form-group">
           <label htmlFor="name" className="form-label">
