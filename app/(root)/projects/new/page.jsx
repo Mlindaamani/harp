@@ -1,7 +1,7 @@
 "use client";
 import { createProject } from "@/app/actions/project";
 import { useActionState } from "react";
-// import Image from "next/image";
+import Image from "next/image";
 
 const NewProject = () => {
   const initialState = { message: "" };
@@ -10,10 +10,10 @@ const NewProject = () => {
     initialState
   );
   const handleSubmit = async (event) => {
-    //Prevent default form submission
+    // Prevent default form submission
     event.preventDefault();
 
-    //Get form data
+    // Get form data
     const formData = new FormData(event.target);
 
     // Call the server action
