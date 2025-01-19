@@ -39,10 +39,4 @@ export const links = [
     label: "Logout",
     icon: "/logout.svg",
   },
-
-  {
-    route: "/clients",
-    label: "Vercel",
-    icon: "/add.svg",
-  },
 ];
