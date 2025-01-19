@@ -3,15 +3,18 @@ import Image from "next/image";
 
 export const SideBarImage = () => {
   return (
-    <div className="d-flex justify-content-between align-items-center p-3 mb-3">
-      <Image
-        src="/repair.svg"
-        width={50}
-        height={50}
-        alt="logo"
-        className="img-thumbnail rounded-5"
-      />
-      <h2 className="fw-bold text-warning text-center m-2">HARP</h2>
-    </div>
+    <>
+      <div className="d-flex justify-content-start align-items-center gap-2 mb-4">
+        <Image
+          src="/repair.svg"
+          width={60}
+          height={60}
+          alt="logo"
+          className="img-thumbnail rounded-5 border-warning border-3"
+        />
+        <h2 className="fw-bold text-secondary text-center m-2">HARP</h2>
+      </div>
+      <hr className="mb-5 border-3 border-warning" />
+    </>
   );
 };

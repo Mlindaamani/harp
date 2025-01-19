@@ -11,7 +11,7 @@ const Projects = () => {
         alt="Projects"
         className="flex-fills"
       />
-      <h3 className="text-secondary mt-3">No projects yet!</h3>
+      <h3 className="text-secondary mt-3 p-3">No projects yet!</h3>
     </div>
   );
 };

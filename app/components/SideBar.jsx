@@ -9,10 +9,10 @@ import Image from "next/image";
 export const SideBar = () => {
   const pathName = usePathname();
   return (
-    <div className="sidebar border-bottom shadow-sm mb-5">
+    <div className="sidebar shadow-end-lg mb-5 border-0 p-3">
       <SideBarImage />
-      <hr />
-      <ul className="nav flex-column gap-5">
+
+      <ul className="nav flex-column gap-4">
         {links.map(({ label, icon, route }) => {
           const isActive =
             pathName === route || pathName.startsWith(`${route}/`);
@@ -22,11 +22,11 @@ export const SideBar = () => {
                 className={
                   isActive
                     ? "nav-link active fw-bold text-warning fs-5"
-                    : "nav-link fs-5 text-secondary"
+                    : "nav-link fs-5 text-dark"
                 }
                 href={route}
               >
-                <div className="d-flex justify-content-evenly">
+                <div className="d-flex justify-content-start align-items-center gap-4">
                   <Image src={icon} alt="Image" width={24} height={24} />
                   {label}
                 </div>

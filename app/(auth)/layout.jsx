@@ -1,8 +1,8 @@
 const AuthLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <div>
+      <main>{children}</main>
+    </div>
   );
 };
 

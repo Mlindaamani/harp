@@ -5,14 +5,14 @@ export const metadata = {
   title: "HARP",
   description: "Home repair platform app",
   icons: {
-    icon: "/service.svg",
+    icon: "/repair.svg",
   },
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-white">{children}</body>
     </html>
   );
 };
