@@ -3,7 +3,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <div className="p-3">
+    <div className="p-4">
       <h3 className="text-warning fw-bold mb-3">Services I Offer</h3>
       <p className="p-4 bg-secondary text-light fs-5 rounded-3 mb-4 border-end border-warning border-5">
         <Image

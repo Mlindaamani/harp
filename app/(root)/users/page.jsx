@@ -3,7 +3,7 @@ import { users } from "@/app/lib/users";
 
 const Users = () => {
   return (
-    <div className="p-5">
+    <div className="p-4">
       <div className="container d-flex justify-content-around align-items-center gap-5 mb-5">
         <h4 className="fw-bold p-2 text-warning">Users</h4>
         <input
