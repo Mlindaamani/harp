@@ -4,7 +4,7 @@ import { SideBar } from "../components/SideBar";
 const RootLayout = ({ children }) => {
   return (
     <div className="d-flex flex-column vh-100 container-fluid">
-      <div className="row">
+      <div className="row gap-4">
         <div className="col-auto">
           <SideBar />
         </div>
