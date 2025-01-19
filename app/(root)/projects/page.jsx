@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <div className="text-center bg-success-subtle text-light mt-5 p-4 rounded-4 d-flex flex-column justify-content-center align-items-center">
+    <div className="text-center text-light mt-5 p-4 rounded-4 d-flex flex-column justify-content-between align-items-center">
       <Image
         src="/database.svg"
         width={150}
