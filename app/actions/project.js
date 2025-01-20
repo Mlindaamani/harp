@@ -17,6 +17,7 @@ export async function createProject(formData) {
       scope,
       objective,
     });
+    console.log(await Project.find());
   } catch (error) {
     console.log(error);
   }
