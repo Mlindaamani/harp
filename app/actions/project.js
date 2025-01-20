@@ -1,5 +1,5 @@
 "use server";
-import axios from "axios";
+import { axiosInstance } from "../lib/axiosInstance";
 
 export async function createProject(formData) {
   const data = {
@@ -10,11 +10,11 @@ export async function createProject(formData) {
   };
 
   try {
-    const res = await axios.post("/api/projects", data);
-    console.log(res.data);
+    const response = await axiosInstance.post("/api/projects", data);
+    console.log(response.data);
   } catch (error) {
     if (error.response) {
-      console.log(error.response.data);
+      console.log(error.response.data.error);
       throw new Error(error.response.data.error);
     } else {
       console.log(error);

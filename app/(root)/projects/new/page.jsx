@@ -2,20 +2,26 @@
 import { createProject } from "@/app/actions/project";
 import { useActionState } from "react";
 import Image from "next/image";
+import { Toaster, toast } from "react-hot-toast";
 
 const NewProject = () => {
-  const initialState = { message: "" };
-  const [state, formAction, isPending] = useActionState(
-    createProject,
-    initialState
-  );
+  const [state, formAction, isPending] = useActionState(createProject, {
+    message: "",
+  });
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     try {
       await createProject(formData);
+      toast.success("Project created successfully", {
+        duration: 4000,
+        position: "top-center",
+      });
     } catch (error) {
-      console.log(error.message);
+      toast.error(`Error: ${error.message}`, {
+        duration: 4000,
+        position: "top-center",
+      });
     }
   };
 
@@ -62,6 +68,7 @@ const NewProject = () => {
           {state.message && <p>{state.message}</p>}
         </div>
       </form>
+      <Toaster position="top-center" />
     </div>
   );
 };
