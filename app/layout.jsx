@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata = {
   title: "HARP",
-  description: "Home repair platform app",
+  description: "HARP web app connects repair professionals to the households",
   icons: {
     icon: "/repair.svg",
   },
