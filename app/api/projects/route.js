@@ -9,7 +9,7 @@ export async function GET(req) {
 
 export async function POST(req) {
   await connectToMongoDb();
-  const { name, objective, scope } = await req.json();
+  const { name, description, objective, scope } = await req.json();
 
   if (!name || !objective || !scope) {
     return new Response(JSON.stringify({ error: "All fields are required" }), {
