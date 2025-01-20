@@ -1,24 +1,24 @@
 "use server";
-import { connectToMongoDb } from "@/app/lib/db";
-import { Project } from "../lib/models/Project";
+import axios from "axios";
 
 export async function createProject(formData) {
-  const name = formData.get("name");
-  const description = formData.get("description");
-  const scope = formData.get("scope");
-  const objective = formData.get("objective");
-
-  await connectToMongoDb();
+  const data = {
+    name: formData.get("name"),
+    description: formData.get("description"),
+    scope: formData.get("scope"),
+    objective: formData.get("objective"),
+  };
 
   try {
-    await Project.create({
-      name,
-      description,
-      scope,
-      objective,
-    });
-    console.log(await Project.find());
+    const res = await axios.post("/api/projects", data);
+    console.log(res.data);
   } catch (error) {
-    console.log(error);
+    if (error.response) {
+      console.log(error.response.data);
+      throw new Error(error.response.data.error);
+    } else {
+      console.log(error);
+      throw new Error("An unexpected error occurred");
+    }
   }
 }

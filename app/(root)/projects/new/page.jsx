@@ -10,15 +10,15 @@ const NewProject = () => {
     initialState
   );
   const handleSubmit = async (event) => {
-    // Prevent default form submission
     event.preventDefault();
-
-    // Get form data
     const formData = new FormData(event.target);
-
-    // Call the server action
-    await createProject(formData);
+    try {
+      await createProject(formData);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
   return (
     <div className="p-4 mt-4 rounded-4 bg-white-subtle">
       <Image src="/add.svg" width={50} height={50} className="mb-3" alt="Add" />
