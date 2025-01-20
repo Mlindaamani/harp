@@ -7,13 +7,16 @@ const Services = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axiosInstance.get("/api/projects");
-        setProjects(res.data);
+        const res = await axiosInstance.get("/api/projects/");
+        console.log(res);
+        setProjects(res?.data);
       } catch (error) {
-        console.error("Error fetching projects:", error);
+        console.error("Error fetching projects:", error.response.data.error);
       } finally {
         setLoading(false);
       }

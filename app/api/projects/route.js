@@ -42,7 +42,7 @@ export async function POST(req) {
 }
 
 export async function GET(req) {
-  await dbConnect();
+  await connectToMongoDb();
   const projects = await Project.find();
   return new Response(JSON.stringify(projects), { status: 200 });
 }
