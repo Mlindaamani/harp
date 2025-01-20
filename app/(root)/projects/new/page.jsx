@@ -22,7 +22,7 @@ const NewProject = () => {
   return (
     <div className="p-4 mt-4 rounded-4 bg-white-subtle">
       <Image src="/add.svg" width={50} height={50} className="mb-3" alt="Add" />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div className="mb-3 form-group">
           <label htmlFor="name" className="form-label">
             Project name

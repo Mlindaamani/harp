@@ -5,7 +5,7 @@ const projectsSchema = Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
       type: String,
