@@ -14,7 +14,7 @@ const NewProject = () => {
       await createProject(formData);
       toast.success("Project created successfully", {
         duration: 4000,
-        position: "bottom-center",
+        position: "top-center",
         id: "xcx",
       });
       setIsPending(false);
