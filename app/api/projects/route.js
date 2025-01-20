@@ -40,3 +40,9 @@ export async function POST(req) {
     errorHandler(error);
   }
 }
+
+export async function GET(req) {
+  await dbConnect();
+  const projects = await Project.find();
+  return new Response(JSON.stringify(projects), { status: 200 });
+}
