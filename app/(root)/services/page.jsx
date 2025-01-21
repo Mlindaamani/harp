@@ -1,20 +1,20 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { axiosInstance } from "@/app/lib/axiosInstance";
 
 const Services = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axiosInstance.get("/api/projects/");
-        console.log(res);
-        setProjects(res?.data);
+        const response = await axiosInstance.get("/api/projects/");
+        setProjects(response.data);
       } catch (error) {
-        console.error("Error fetching projects:", error.response.data.error);
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -39,7 +39,7 @@ const Services = () => {
           <div key={project._id} className="col-md-4 mb-4">
             <div className="p-4 bg-secondary text-light fs-5 rounded-3 border-end border-warning border-5">
               <Image
-                src={"/repair.svg"}
+                src="/repair.svg"
                 width={50}
                 height={50}
                 alt="service"
