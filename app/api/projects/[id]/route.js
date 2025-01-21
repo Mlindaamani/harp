@@ -32,7 +32,7 @@ export async function GET(req, { params }) {
       );
     }
 
-    // Handle other unexpected errors
+    // Other unexpected errors
     return NextResponse.json(
       { error: "An unexpected error occurred" },
       { status: 500 }

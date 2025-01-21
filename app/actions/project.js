@@ -10,8 +10,7 @@ export async function createProject(formData) {
   };
 
   try {
-    const response = await axiosInstance.post("/api/projects", data);
-    return response.data;
+    await axiosInstance.post("/api/projects", data);
   } catch (error) {
     if (error.response) {
       console.error("Error creating project:", error.response.data.error);

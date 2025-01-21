@@ -1,5 +1,4 @@
 import { connectToMongoDb } from "@/app/lib/db";
-import { errorHandler } from "@/app/lib/errorHandler";
 import { Project } from "@/app/lib/models/Project";
 import { NextResponse } from "next/server";
 
@@ -26,17 +25,19 @@ export async function POST(req) {
     }
 
     // Create a new project
-    const project = await Project.create({
+    await Project.create({
       name,
       description,
       objective,
       scope,
     });
 
-    return NextResponse(project, { status: 201 });
+    return NextResponse.json(
+      { message: "Project created successfully!" },
+      { status: 201 }
+    );
   } catch (error) {
     console.log("Error creating a project:", error);
-    errorHandler(error);
     return NextResponse.json(
       { error: "Failed to fetch projects" },
       { status: 500 }

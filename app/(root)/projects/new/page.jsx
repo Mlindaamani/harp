@@ -7,8 +7,8 @@ import { useState } from "react";
 const NewProject = () => {
   const [isPending, setIsPending] = useState(false);
   const handleSubmit = async (event) => {
-    setIsPending(true);
     event.preventDefault();
+    setIsPending(true);
     const formData = new FormData(event.target);
     try {
       await createProject(formData);
