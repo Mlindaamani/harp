@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
-  timeout: 5000,
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? process.env.BASE_URL_PROD
+      : process.env.BASE_URL_DEV,
 });
