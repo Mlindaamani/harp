@@ -1,6 +1,7 @@
 import { connectToMongoDb } from "@/app/lib/db";
 import { errorHandler } from "@/app/lib/errorHandler";
 import { Project } from "@/app/lib/models/Project";
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
@@ -44,5 +45,5 @@ export async function POST(req) {
 export async function GET(req) {
   await connectToMongoDb();
   const projects = await Project.find();
-  return new Response(JSON.stringify(projects), { status: 200 });
+  return new NextResponse(projects);
 }

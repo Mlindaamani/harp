@@ -7,8 +7,6 @@ const Services = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
-
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -41,7 +39,7 @@ const Services = () => {
           <div key={project._id} className="col-md-4 mb-4">
             <div className="p-4 bg-secondary text-light fs-5 rounded-3 border-end border-warning border-5">
               <Image
-                src={project.image || "/default.svg"}
+                src={project.image || "/repair.svg"}
                 width={50}
                 height={50}
                 alt="service"
