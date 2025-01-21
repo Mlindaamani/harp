@@ -12,6 +12,8 @@ const Services = () => {
     const fetchProjects = async () => {
       try {
         const response = await axiosInstance.get("/api/projects/");
+        //Checking if the backend provide data.
+        console.log(response.data);
         setProjects(response.data);
       } catch (error) {
         console.error(error);
