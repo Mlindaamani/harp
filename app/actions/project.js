@@ -10,13 +10,14 @@ export async function createProject(formData) {
   };
 
   try {
-    await axiosInstance.post("/api/projects", data);
+    const response = await axiosInstance.post("/api/projects", data);
+    return response.data;
   } catch (error) {
     if (error.response) {
-      console.log(error.response.data.error);
+      console.error("Error creating project:", error.response.data.error);
       throw new Error(error.response.data.error);
     } else {
-      console.log(error);
+      console.error("Unexpected error:", error);
       throw new Error("An unexpected error occurred");
     }
   }
