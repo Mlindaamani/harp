@@ -1,8 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { axiosInstance } from "@/app/lib/axiosInstance";
+import { Loading } from "@/app/components/Loading";
 
 const Services = () => {
   const [projects, setProjects] = useState([]);
@@ -10,10 +10,9 @@ const Services = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
+      setLoading(true);
       try {
         const response = await axiosInstance.get("/api/projects/");
-        //Checking if the backend provide data.
-        console.log(response.data);
         setProjects(response.data);
       } catch (error) {
         console.error(error);
@@ -25,13 +24,7 @@ const Services = () => {
     fetchProjects();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="mt-5 mb-4 text-center fw-bolder text-success">
-        Loading...
-      </div>
-    );
-  }
+  if (loading) return <Loading />;
 
   return (
     <div className="p-4">
@@ -41,7 +34,7 @@ const Services = () => {
           <div key={project._id} className="col-md-4 mb-4">
             <div className="p-4 bg-secondary text-light fs-5 rounded-3 border-end border-warning border-5">
               <Image
-                src="/repair.svg"
+                src="/database.svg"
                 width={50}
                 height={50}
                 alt="service"
