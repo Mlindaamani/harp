@@ -51,7 +51,9 @@ export async function GET(req) {
     await connectToMongoDb();
 
     //Retrieve projects
-    const projects = await Project.find().sort({ createdAt: "desc" }).limit(10);
+    const projects = await Project.find()
+      .sort({ createdAt: "desc" })
+      .limit(100);
 
     //Return projects
     return NextResponse.json(projects);
