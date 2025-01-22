@@ -28,12 +28,12 @@ const Services = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="p-4">
-      <h3 className="text-warning fw-bold mb-4">Services</h3>
+    <div className="px-3">
+      <h3 className="text-warning fw-bold my-3 px-2">Services</h3>
       <div className="row justify-content-between align-items-center">
         {projects.map((project) => (
           <div key={project._id} className="col-md-4 mb-4">
-            <div className="p-4 bg-secondary text-light rounded-4">
+            <div className="p-3 bg-secondary text-light rounded-4">
               <Image
                 src="/database.svg"
                 width={50}
