@@ -9,7 +9,7 @@ import Image from "next/image";
 export const SideBar = () => {
   const pathName = usePathname();
   return (
-    <div className="sidebar shadow-end-lg mb-5 border-0 p-3">
+    <div className="sidebar shadow-end-lg mb-5 border-0 p-3 fixed bg-light">
       <SideBarImage />
 
       <ul className="nav flex-column gap-4">
@@ -21,8 +21,8 @@ export const SideBar = () => {
               <Link
                 className={
                   isActive
-                    ? "nav-link active fw-bold text-warning fs-5"
-                    : "nav-link fs-5 text-dark"
+                    ? "nav-link active text-secondary"
+                    : "nav-link text-dark"
                 }
                 href={route}
               >
