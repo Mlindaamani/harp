@@ -47,8 +47,13 @@ export async function POST(req) {
 
 export async function GET(req) {
   try {
+    // Connect to database
     await connectToMongoDb();
-    const projects = await Project.find().sort({ createdAt: "desc" });
+
+    //Retrieve projects
+    const projects = await Project.find().sort({ createdAt: "desc" }).limit(10);
+
+    //Return projects
     return NextResponse.json(projects);
   } catch (error) {
     console.log("Failed to fetch projects", error);

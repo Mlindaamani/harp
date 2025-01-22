@@ -14,6 +14,7 @@ const Services = () => {
       try {
         const response = await axiosInstance.get("/api/projects/");
         setProjects(response.data);
+        setLoading(false);
       } catch (error) {
         console.error(error);
       } finally {
@@ -28,7 +29,7 @@ const Services = () => {
 
   return (
     <div className="p-4">
-      <h3 className="text-warning fw-bold mb-3">Services I Offer</h3>
+      <h3 className="text-warning fw-bold mb-4">Services</h3>
       <div className="row">
         {projects.map((project) => (
           <div key={project._id} className="col-md-4 mb-4">
