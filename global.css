@@ -16,8 +16,8 @@ body {
 }
 
 .nav-link.active {
-  border-right: 8px solid orange;
-  border-radius: 8px;
+  border-right: 4px solid orange;
+  border-radius: 4px;
   background: #f1edd4bd;
 }
 
