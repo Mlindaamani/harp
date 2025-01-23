@@ -35,7 +35,7 @@ const NewProject = () => {
       toast.error(error.message, {
         duration: 4000,
         position: "top-center",
-        id: "xcv",
+        id: "project",
       });
     }
   };
