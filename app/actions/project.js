@@ -9,8 +9,14 @@ export async function createProject(formData) {
     objective: formData.get("objective"),
   };
 
+  // Data validation
+  if (!data.name || !data.description || !data.scope || !data.objective) {
+    throw new Error("All fields are required.");
+  }
+
   try {
-    await axiosInstance.post("/api/projects", data);
+    const response = await axiosInstance.post("/api/projects", data);
+    return response.data;
   } catch (error) {
     if (error.response) {
       console.error("Error creating project:", error.response.data.error);
