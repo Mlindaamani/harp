@@ -1,6 +1,7 @@
 import { Project } from "@/app/lib/models/Project";
 import { connectToMongoDb } from "@/app/lib/db";
 import { NextResponse } from "next/server";
+import { getEnabledExperimentalFeatures } from "next/dist/server/config";
 
 // Get individual project by ID
 export async function GET(req, { params }) {

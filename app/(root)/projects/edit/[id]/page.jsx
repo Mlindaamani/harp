@@ -10,19 +10,28 @@ const EditProject = ({ params }) => {
   const [project, setProject] = useState({});
   const [loading, setLoading] = useState(true);
   const [isPending, setIsPending] = useState(false);
+
   const router = useRouter();
   const { id: projectId } = use(params);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsPending(true);
+
+    //Get form form data
     const formData = new FormData(event.target);
     try {
       const { message, id } = (
         await axiosInstance.put(`/api/projects/${projectId}`, formData)
       ).data;
       setIsPending(false);
-      toast.success(message);
+
+      toast.success(message, {
+        duration: 5000,
+        id: "edit",
+      });
+
+      //Redirect to a project with an ID `id`
       router.push(`/projects/${id}`);
     } catch (error) {
       console.error(error);
@@ -50,7 +59,7 @@ const EditProject = ({ params }) => {
     <div className="rounded-5 container d-flex align-items-center flex-column p-4">
       <div className="d-flex justify-content-start gap-3 align-items-center mb-3">
         <Image src="/edit.svg" width={50} height={50} alt="Add" />
-        <span className="text-warning fs-1 fw-bold">Edit {project.name}</span>
+        <span className="text-warning fs-1 fw-bold">Edit Project</span>
       </div>
       <form onSubmit={handleSubmit} autoComplete="off" className="w-75">
         <div className="mb-4 form-group">

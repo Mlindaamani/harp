@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import { useState, useEffect, use } from "react";
 import { Loading } from "@/app/components/Loading";
 import { axiosInstance } from "@/app/lib/axiosInstance";
 import Link from "next/link";
-import { use } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Toaster, toast } from "react-hot-toast";
 
 export default function ProjectDetail({ params }) {
   const { id: projectId } = use(params);
@@ -25,9 +24,14 @@ export default function ProjectDetail({ params }) {
           duration: 6000,
           position: "top-center",
         });
+
+        // Redirect to projects
         router.push("/projects");
       } else {
-        toast.error("Failed to delete the project.");
+        toast.error("Failed to delete the project.", {
+          duration: 5000,
+          id: "edit",
+        });
       }
     }
   };
@@ -53,29 +57,29 @@ export default function ProjectDetail({ params }) {
     <div className="container p-5 mt-5 bg-light-subtle">
       <div className="d-flex justify-content-between align-items-center mb-5">
         <h3 className="text-warning fw-bold">Project Details</h3>
-        <div className="btn-group">
+        <div className="btn-group btn-group-sm">
           <Link
             href={`/projects/edit/${projectId}`}
-            className="btn btn-secondary btn-sm"
+            className="btn btn-success btn-sm"
           >
-            <Image src={"/edit.svg"} width={20} height={20} alt="update" />
+            <Image src={"/edit.svg"} width={30} height={30} alt="update" />
           </Link>
 
-          <button className="btn btn-dark btn-sm ">
+          <button className="btn btn-success btn-sm ">
             <Image
               src={"/delete.svg"}
-              width={20}
-              height={20}
+              width={30}
+              height={30}
               alt="delete"
               onClick={handleDelete}
             />
           </button>
 
-          <Link href={`/projects`} className="btn btn-dark btn-sm ">
+          <Link href={`/projects`} className="btn btn-success btn-sm ">
             <Image
               src={"/arrow_back.svg"}
-              width={20}
-              height={20}
+              width={30}
+              height={30}
               alt="delete"
             />
           </Link>
