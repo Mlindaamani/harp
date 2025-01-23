@@ -24,3 +24,7 @@ body {
 .my-spinner {
   height: 100vh;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}
