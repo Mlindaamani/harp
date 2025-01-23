@@ -12,7 +12,7 @@ export const SideBarImage = () => {
           alt="logo"
           className="img-thumbnail rounded-5 border-warning border-3"
         />
-        <h2 className="fw-bold text-secondary text-center m-2">HARP</h2>
+        <h4 className="fw-bold text-secondary text-center m-2">HARP</h4>
       </div>
       <hr className="mb-5 border-3 border-warning" />
     </>

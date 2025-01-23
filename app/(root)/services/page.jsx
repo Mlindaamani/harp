@@ -39,7 +39,7 @@ const Services = () => {
                 width={50}
                 height={50}
                 alt="service"
-                className="float-start rounded text-warning mx-3"
+                className="float-start text-warning mx-3 rounded"
               />
               <h5 className="text-warning">{project.name}</h5>
               <p>{project.description}</p>

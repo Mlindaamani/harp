@@ -9,7 +9,7 @@ import Image from "next/image";
 export const SideBar = () => {
   const pathName = usePathname();
   return (
-    <div className="sidebar shadow-end-lg mb-5 border-0 p-3 fixed bg-light">
+    <div className="sidebar shadow-end-lg mb-5 border-0 p-3 bg-light">
       <SideBarImage />
 
       <ul className="nav flex-column gap-4">
