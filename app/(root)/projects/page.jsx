@@ -50,23 +50,25 @@ const Services = () => {
       <div className="row justify-content-between align-items-center">
         {projects.map((project) => (
           <div key={project._id} className="col-md-4 mb-4">
-            <div className="p-3 bg-secondary text-light rounded-4">
-              <Image
-                src="/database.svg"
-                width={50}
-                height={50}
-                alt="service"
-                className="float-start text-warning mx-3 rounded"
-              />
-              <h5 className="text-warning">{project.name}</h5>
-              <p>{project.description}</p>
-              <p>
-                <strong>Objective:</strong> {project.objective}
-              </p>
-              <p>
-                <strong>Scope:</strong> {project.scope}
-              </p>
-            </div>
+            <Link href={`projects/${project._id}`} className="text-decoration-none">
+              <div className="p-3 bg-secondary text-light rounded-4">
+                <Image
+                  src="/database.svg"
+                  width={50}
+                  height={50}
+                  alt="service"
+                  className="float-start text-warning mx-3 rounded"
+                />
+                <h5 className="text-warning">{project.name}</h5>
+                <p>{project.description}</p>
+                <p>
+                  <strong>Objective:</strong> {project.objective}
+                </p>
+                <p>
+                  <strong>Scope:</strong> {project.scope}
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
