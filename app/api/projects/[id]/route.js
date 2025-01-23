@@ -7,7 +7,7 @@ export async function GET(req, { params }) {
   await connectToMongoDb();
 
   // Extract the project ID from params
-  const { id } = params;
+  const { id } = await params;
 
   try {
     // Fetch the project by ID
