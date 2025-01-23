@@ -11,7 +11,7 @@ export async function createProject(formData) {
 
   // Data validation
   if (!data.name || !data.description || !data.scope || !data.objective) {
-    throw new Error("All fields are required.");
+    throw new Error("All fields are required");
   }
 
   try {

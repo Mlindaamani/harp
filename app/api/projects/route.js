@@ -25,7 +25,7 @@ export async function POST(req) {
     }
 
     // Create a new project
-    await Project.create({
+    const project = await Project.create({
       name,
       description,
       objective,
@@ -33,7 +33,7 @@ export async function POST(req) {
     });
 
     return NextResponse.json(
-      { message: "Project created successfully!" },
+      { message: "Project created successfully!", project },
       { status: 201 }
     );
   } catch (error) {

@@ -12,12 +12,6 @@ export const links = [
   },
 
   {
-    route: "/services",
-    label: "Services",
-    icon: "/service.svg",
-  },
-
-  {
     route: "/projects",
     label: "Projects",
     icon: "/database.svg",
@@ -34,6 +28,7 @@ export const links = [
     label: "My Clients",
     icon: "/support.svg",
   },
+
   {
     route: "/logout",
     label: "Logout",

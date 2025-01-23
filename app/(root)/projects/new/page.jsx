@@ -3,24 +3,37 @@ import { createProject } from "@/app/actions/project";
 import Image from "next/image";
 import { Toaster, toast } from "react-hot-toast";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const NewProject = () => {
   const [isPending, setIsPending] = useState(false);
+  const router = useRouter();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsPending(true);
     const formData = new FormData(event.target);
     try {
-      await createProject(formData);
-      toast.success("Project created successfully", {
+      const { message, project } = await createProject(formData);
+
+      // Clear form
+      event.target.reset();
+
+      // Show success toast
+      toast.success(message, {
         duration: 4000,
         position: "top-center",
         id: "xcx",
       });
+
+      // Navigate to the projects page
+      // I will navigating to a newly created project
+      router.push("/projects/");
+
       setIsPending(false);
     } catch (error) {
       setIsPending(false);
-      toast.error(`Error: ${error.message}`, {
+      toast.error(error.message, {
         duration: 4000,
         position: "top-center",
         id: "xcv",
