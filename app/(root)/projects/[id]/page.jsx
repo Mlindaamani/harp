@@ -21,7 +21,10 @@ export default function ProjectDetail({ params }) {
 
       // Redirect to the projects list page
       if (response.status == 200) {
-        toast.success("Project deleted successfully.");
+        toast.success("Project deleted successfully.", {
+          duration: 6000,
+          position: "top-center",
+        });
         router.push("/projects");
       } else {
         toast.error("Failed to delete the project.");
