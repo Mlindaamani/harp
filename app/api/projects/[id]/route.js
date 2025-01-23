@@ -69,7 +69,7 @@ export async function DELETE(request, { params }) {
   await connectToMongoDb();
 
   // Extract the project ID from params
-  const { id } = params;
+  const { id } = await params;
 
   // Find and delete the project
   const deletedProject = await Project.findByIdAndDelete(id);
@@ -80,6 +80,6 @@ export async function DELETE(request, { params }) {
 
   return NextResponse.json(
     { message: "Project deleted successfully!" },
-    { status: 204 }
+    { status: 200 }
   );
 }

@@ -9,10 +9,7 @@ export const connectToMongoDb = async () => {
   if (mongoose.connection.readyState >= 1) return;
 
   try {
-    await mongoose.connect(MONGO_CONNECTION_STRING, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(MONGO_CONNECTION_STRING);
     console.log("✅✅MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection error:", error);
