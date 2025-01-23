@@ -2,6 +2,7 @@ import { Project } from "@/app/lib/models/Project";
 import { connectToMongoDb } from "@/app/lib/db";
 import { NextResponse } from "next/server";
 
+// Get individual project by ID
 export async function GET(req, { params }) {
   // Connect to the database
   await connectToMongoDb();
@@ -38,4 +39,47 @@ export async function GET(req, { params }) {
       { status: 500 }
     );
   }
+}
+
+// Update a project by ID
+export async function PUT(req, { params }) {
+  await connectToMongoDb();
+
+  // Extract the project ID from params
+  const { id: projectId } = await params;
+
+  // Parse the request body
+  const data = await req.json();
+
+  // Update the project by ID
+  const updatedProject = await Project.findByIdAndUpdate(projectId, data, {
+    new: true,
+  });
+
+  if (!updatedProject) {
+    return NextResponse.json({ message: "Project not found" }, { status: 404 });
+  }
+  return NextResponse.json(
+    { message: "Project updated successfully!", id: updatedProject._id },
+    { status: 200 }
+  );
+}
+
+export async function DELETE(request, { params }) {
+  await connectToMongoDb();
+
+  // Extract the project ID from params
+  const { id } = params;
+
+  // Find and delete the project
+  const deletedProject = await Project.findByIdAndDelete(id);
+
+  if (!deletedProject) {
+    return NextResponse.json({ message: "Project not found" }, { status: 404 });
+  }
+
+  return NextResponse.json(
+    { message: "Project deleted successfully!" },
+    { status: 204 }
+  );
 }

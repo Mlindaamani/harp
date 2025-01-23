@@ -5,4 +5,8 @@ export const axiosInstance = axios.create({
     process.env.NODE_ENV === "production"
       ? process.env.BASE_URL_PROD
       : process.env.BASE_URL_DEV,
+
+  headers: {
+    "Content-Type": "application/json",
+  },
 });

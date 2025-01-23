@@ -4,6 +4,7 @@ import { Loading } from "@/app/components/Loading";
 import { axiosInstance } from "@/app/lib/axiosInstance";
 import Link from "next/link";
 import { use } from "react";
+import Image from "next/image";
 
 export default function ProjectDetail({ params }) {
   const { id: projectId } = use(params);
@@ -31,9 +32,20 @@ export default function ProjectDetail({ params }) {
     <div className="container p-5 mt-5 bg-light-subtle">
       <div className="d-flex justify-content-between align-items-center mb-5">
         <h3 className="text-warning fw-bold">Project Details</h3>
-        <Link href={`/projects/${projectId}/edit`} className="btn btn-warning">
-          Edit
-        </Link>
+        <div className="btn-group">
+          <Link
+            href={`/projects/edit/${projectId}`}
+            className="btn btn-secondary btn-sm"
+          >
+            <Image src={"/edit.svg"} width={20} height={20} alt="update" />
+          </Link>
+          <Link
+            href={`/projects/${projectId}/edit`}
+            className="btn btn-dark btn-sm "
+          >
+            <Image src={"/delete.svg"} width={20} height={20} alt="delete" />
+          </Link>
+        </div>
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <div>

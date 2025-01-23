@@ -2,6 +2,7 @@ import { connectToMongoDb } from "@/app/lib/db";
 import { Project } from "@/app/lib/models/Project";
 import { NextResponse } from "next/server";
 
+// Create a new project
 export async function POST(req) {
   try {
     await connectToMongoDb();
@@ -45,6 +46,7 @@ export async function POST(req) {
   }
 }
 
+// Get all projects
 export async function GET(req) {
   try {
     // Connect to database

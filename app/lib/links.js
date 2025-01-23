@@ -6,12 +6,6 @@ export const links = [
   },
 
   {
-    route: "/users",
-    label: "Users",
-    icon: "/group.svg",
-  },
-
-  {
     route: "/projects",
     label: "Projects",
     icon: "/database.svg",
