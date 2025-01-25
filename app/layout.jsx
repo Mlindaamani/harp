@@ -1,6 +1,5 @@
 import "./styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Analytics } from "@vercel/analytics";
 
 export const metadata = {
   title: "HARP",
@@ -13,10 +12,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className="bg-white">
-        {children}
-        <Analytics />
-      </body>
+      <body className="bg-white">{children}</body>
     </html>
   );
 };
