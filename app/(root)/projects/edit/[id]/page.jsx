@@ -5,6 +5,7 @@ import { axiosInstance } from "@/app/lib/axiosInstance";
 import Image from "next/image";
 import { Toaster, toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const EditProject = ({ params }) => {
   const [project, setProject] = useState({});
@@ -58,8 +59,8 @@ const EditProject = ({ params }) => {
   return (
     <div className="rounded-5 container d-flex align-items-center flex-column p-4">
       <div className="d-flex justify-content-start gap-3 align-items-center mb-3">
-        <Image src="/edit.svg" width={50} height={50} alt="Add" />
-        <span className="text-warning fs-1 fw-bold">Edit Project</span>
+        <Image src="/edit.svg" width={50} height={50} alt="Add" className="mt-3"/>
+        <span className="text-warning fs-3 fw-bold mt-3">Edit Project</span>
       </div>
       <form onSubmit={handleSubmit} autoComplete="off" className="w-75">
         <div className="mb-4 form-group">
@@ -134,18 +135,25 @@ const EditProject = ({ params }) => {
             onChange={(e) => setProject({ ...project, scope: e.target.value })}
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 d-flex justify-content-between align-items-center">
           <button
             disabled={isPending}
             type="submit"
             className={
               isPending
-                ? "btn btn-secondary opacity-50 disabled fs-5 fw-bold btn-sm rounded-4 p-2"
+                ? "btn btn-secondary btn-sm disabled fs-5 fw-bold  rounded-4 p-2"
                 : "btn btn-warning fw-bold text-white fs-5 btn-sm rounded-4 p-2"
             }
           >
             {isPending ? "Editing project..." : "Edit Project"}
           </button>
+          <Link
+            href={`/projects/${projectId}`}
+            type="submit"
+            className="btn btn-danger fs-5 fw-bold btn-sm rounded-3 p-2 btn-sm"
+          >
+            Cancel
+          </Link>
         </div>
       </form>
       <Toaster />
