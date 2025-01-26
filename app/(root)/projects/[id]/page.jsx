@@ -62,12 +62,12 @@ export default function ProjectDetail({ params }) {
             href={`/projects/edit/${projectId}`}
             className="btn btn-success btn-sm"
           >
-            <Image src={"/edit.svg"} width={30} height={30} alt="update" />
+            <Image src={"/svg/edit.svg"} width={30} height={30} alt="update" />
           </Link>
 
           <button className="btn btn-success btn-sm ">
             <Image
-              src={"/delete.svg"}
+              src={"/svg/delete.svg"}
               width={30}
               height={30}
               alt="delete"
@@ -77,7 +77,7 @@ export default function ProjectDetail({ params }) {
 
           <Link href={`/projects`} className="btn btn-success btn-sm ">
             <Image
-              src={"/arrow_back.svg"}
+              src={"/svg/arrow_back.svg"}
               width={30}
               height={30}
               alt="delete"

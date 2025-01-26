@@ -6,7 +6,7 @@ export const SideBarImage = () => {
     <>
       <div className="d-flex justify-content-start align-items-center gap-2 mb-4">
         <Image
-          src="/repair.svg"
+          src="/svg/repair.svg"
           width={50}
           height={50}
           alt="logo"

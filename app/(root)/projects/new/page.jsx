@@ -44,7 +44,7 @@ const NewProject = () => {
     <div className="rounded-5 container d-flex align-items-center flex-column p-4">
       <div className="d-flex justify-content-start gap-3 align-items-center mb-3">
         <Image
-          src="/post.svg"
+          src="/svg/post.svg"
           width={50}
           height={50}
           alt="Add"

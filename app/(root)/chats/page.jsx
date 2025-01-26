@@ -7,7 +7,7 @@ const Chats = () => {
       <div className="container d-flex justify-content-between align-items-center">
         <h3>Real-Time Chat between Customer and Service Provider</h3>
         <Image
-          src="/chat.svg"
+          src="/svg/chat.svg"
           width={100}
           height={100}
           quality={2}

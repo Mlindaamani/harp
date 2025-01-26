@@ -28,7 +28,7 @@ export async function createProject(formData) {
   }
 }
 
-export async function testActionState(state, formData) {
+export async function testActionState(prevState, formData) {
   // Data object
   const data = {
     name: formData.get("name"),

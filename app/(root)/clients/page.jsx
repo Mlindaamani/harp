@@ -7,7 +7,7 @@ const Clients = () => {
       <div className="container d-flex justify-content-between align-items-center">
         <h3>Meet Your Potential Client in Here. We got you covered!</h3>
         <Image
-          src="/support.svg"
+          src="/svg/support.svg"
           width={100}
           height={100}
           quality={2}

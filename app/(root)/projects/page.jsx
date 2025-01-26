@@ -48,7 +48,7 @@ const ProjectList = () => {
           href="/projects/new"
         >
           <div className="d-flex justify-content-center align-items-center">
-            <Image src="/add.svg" width={24} height={24} alt="Add" />
+            <Image src="/svg/add.svg" width={24} height={24} alt="Add" />
             <span className="lead">New</span>
           </div>
         </Link>
@@ -63,7 +63,7 @@ const ProjectList = () => {
               >
                 <div className="p-3 bg-secondary text-light rounded-4">
                   <Image
-                    src="/database.svg"
+                    src="/svg/database.svg"
                     width={50}
                     height={50}
                     alt="service"
