@@ -1,3 +1,5 @@
+// Search functionality.
+
 export const filteredProjects = (
   searchTerm,
   projects,

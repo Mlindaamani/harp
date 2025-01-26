@@ -22,10 +22,4 @@ export const links = [
     label: "My Clients",
     icon: "/support.svg",
   },
-
-  {
-    route: "/logout",
-    label: "Logout",
-    icon: "/logout.svg",
-  },
 ];

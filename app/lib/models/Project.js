@@ -7,14 +7,17 @@ const projectsSchema = Schema(
       type: String,
       required: false,
     },
+
     description: {
       type: String,
       require: true,
     },
+
     scope: {
       type: String,
       require: true,
     },
+
     objective: {
       type: String,
       require: true,
@@ -23,6 +26,6 @@ const projectsSchema = Schema(
   { timestamps: true }
 );
 
-// Use a singleton pattern to avoid overwriting the model
+// I am using a Singleton pattern to avoid overwriting the model
 export const Project =
   mongoose.models.Project || model("Project", projectsSchema);
