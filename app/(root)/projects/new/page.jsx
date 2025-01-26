@@ -43,7 +43,13 @@ const NewProject = () => {
   return (
     <div className="rounded-5 container d-flex align-items-center flex-column p-4">
       <div className="d-flex justify-content-start gap-3 align-items-center mb-3">
-        <Image src="/post.svg" width={50} height={50} alt="Add" className="mt-3" />
+        <Image
+          src="/post.svg"
+          width={50}
+          height={50}
+          alt="Add"
+          className="mt-3"
+        />
         <span className="text-warning fs-3 fw-bold mt-3">Add Project</span>
       </div>
       <form onSubmit={handleSubmit} autoComplete="off" className="w-75">

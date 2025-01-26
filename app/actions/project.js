@@ -27,3 +27,32 @@ export async function createProject(formData) {
     }
   }
 }
+
+export async function testActionState(state, formData) {
+  // Data object
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+  };
+
+  // Errors object
+  const errors = {};
+
+  // Data validation
+  if (!data.name) errors.name = "Name is required";
+  if (!data.email) errors.email = "Email is required";
+  if (!data.phone) errors.phone = "Phone number is required";
+
+  // If there are errors, return them
+  if (Object.keys(errors).length > 0) {
+    return { errors };
+  }
+
+  // If no errors, return the project name
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ project: data.name });
+    }, 2000);
+  });
+}
