@@ -83,4 +83,3 @@ export async function DELETE(request, { params }) {
     { status: 200 }
   );
 }
-//The project depencency has changed since the last commit.

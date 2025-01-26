@@ -15,7 +15,7 @@ export async function POST(req) {
         { status: 400 }
       );
     }
-xx
+
     // Check for duplicate project
     const existingProject = await Project.findOne({ name });
     if (existingProject) {
