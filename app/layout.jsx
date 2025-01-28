@@ -1,11 +1,6 @@
+import { AuthProvider } from "./provider/AuthProvider";
 import "./styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Roboto } from "next/font/google";
-
-const harpFont = Roboto({
-  weight: "700",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "HARP",
@@ -17,9 +12,11 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en" className={harpFont.className}>
-      <body className="bg-white">{children}</body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body className="bg-white">{children}</body>
+      </html>
+    </AuthProvider>
   );
 };
 
