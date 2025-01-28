@@ -23,26 +23,23 @@ const NewProject = () => {
       toast.success(message, {
         duration: 4000,
         position: "top-center",
-        id: "xcx",
       });
 
-      // I will navigating to a newly created project
+      // Navigate to the newly created project
       router.push(`/projects/${project._id}`);
-
-      setIsPending(false);
     } catch (error) {
-      setIsPending(false);
       toast.error(error.message, {
         duration: 4000,
         position: "top-center",
-        id: "project",
       });
+    } finally {
+      setIsPending(false);
     }
   };
 
   return (
-    <div className="rounded-5 container d-flex align-items-center flex-column p-4">
-      <div className="d-flex justify-content-start gap-3 align-items-center mb-3">
+    <div className="container d-flex align-items-center flex-column p-4 mt-5 bg-light rounded-4 shadow-sm">
+      <div className="d-flex justify-content-start gap-3 align-items-center mb-4">
         <Image
           src="/svg/post.svg"
           width={50}
@@ -50,43 +47,42 @@ const NewProject = () => {
           alt="Add"
           className="mt-3"
         />
-        <span className="text-warning fs-3 fw-bold mt-3">Add Project</span>
+        <span className="text-warning fs-3 fw-bold">Add Project</span>
       </div>
       <form onSubmit={handleSubmit} autoComplete="off" className="w-75">
-        <div className="mb-4 form-group">
-          <label
-            htmlFor="name"
-            className="form-label mb-3 fw-bold text-warning"
-          >
-            Project name
+        <div className="mb-4">
+          <label htmlFor="name" className="form-label fw-bold text-warning">
+            Project Name
           </label>
           <input
             type="text"
             name="name"
             id="name"
-            className="form-control p-3 border-warning  outline-none fw-bold rounded-4"
+            className="form-control p-3 border-warning rounded-4"
             disabled={isPending}
+            required
           />
         </div>
         <div className="mb-4">
           <label
             htmlFor="description"
-            className="form-label mb-3 fw-bold text-warning"
+            className="form-label fw-bold text-warning"
           >
             Description
           </label>
-          <input
-            type="text"
+          <textarea
             name="description"
             id="description"
-            className="form-control p-3 border-warning outline-none fw-bold rounded-4"
+            className="form-control p-3 border-warning rounded-4"
             disabled={isPending}
+            required
+            rows="3"
           />
         </div>
         <div className="mb-4">
           <label
             htmlFor="objective"
-            className="form-label mb-3 fw-bold text-warning"
+            className="form-label fw-bold text-warning"
           >
             Main Objective
           </label>
@@ -94,34 +90,31 @@ const NewProject = () => {
             type="text"
             name="objective"
             id="objective"
-            className="form-control p-3 border-warning opacity-90 outline-none fw-bold rounded-4"
+            className="form-control p-3 border-warning rounded-4"
             disabled={isPending}
+            required
           />
         </div>
         <div className="mb-4">
-          <label
-            htmlFor="scope"
-            className="form-label mb-3 fw-bold text-warning"
-          >
+          <label htmlFor="scope" className="form-label fw-bold text-warning">
             Project Scope
           </label>
           <input
             type="text"
             name="scope"
             id="scope"
-            className="form-control p-3 border-warning opacity-90 outline-none fw-bold rounded-4"
+            className="form-control p-3 border-warning rounded-4"
             disabled={isPending}
+            required
           />
         </div>
         <div className="mb-3">
           <button
             disabled={isPending}
             type="submit"
-            className={
-              isPending
-                ? "btn btn-secondary opacity-50 disabled fs-5 fw-bold btn-sm rounded-4 p-2"
-                : "btn btn-warning fw-bold text-white fs-5 btn-sm rounded-4 p-2"
-            }
+            className={`btn fw-bold text-white fs-5 btn-sm rounded-4 p-2 ${
+              isPending ? "btn-secondary opacity-50" : "btn-warning"
+            }`}
           >
             {isPending ? "Creating project..." : "Create Project"}
           </button>

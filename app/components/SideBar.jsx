@@ -15,7 +15,7 @@ export const SideBar = () => {
       <ul className="nav flex-column gap-4">
         {links.map(({ label, icon, route }) => {
           const isActive =
-            pathName === route || pathName.startsWith(`${route}/`);
+            pathName === route || pathName.startsWith(`/${route}/`);
           return (
             <li className="nav-item" key={label}>
               <Link

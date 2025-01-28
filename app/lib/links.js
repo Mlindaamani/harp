@@ -1,24 +1,29 @@
 export const links = [
   {
+    route: "/dashboard",
+    label: "Dashboard",
+    icon: "/svg/dashboard.svg",
+  },
+  {
     route: "/",
     label: "Home",
     icon: "/svg/home.svg",
   },
 
   {
-    route: "/projects",
+    route: "/dashboard/projects",
     label: "Projects",
     icon: "/svg/database.svg",
   },
 
   {
-    route: "/chats",
+    route: "/dashboard/chats",
     label: "Chats",
     icon: "/svg/chat.svg",
   },
 
   {
-    route: "/clients",
+    route: "/dashboard/clients",
     label: "My Clients",
     icon: "/svg/support.svg",
   },

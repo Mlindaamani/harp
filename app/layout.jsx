@@ -12,11 +12,9 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <AuthProvider>
-      <html lang="en">
-        <body className="bg-white">{children}</body>
-      </html>
-    </AuthProvider>
+    <html lang="en">
+      <body className="bg-white">{children}</body>
+    </html>
   );
 };
 

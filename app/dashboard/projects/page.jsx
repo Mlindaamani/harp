@@ -33,44 +33,47 @@ const ProjectList = () => {
   const filtered = filteredProjects(searchTerm, projects);
 
   return (
-    <div className="px-3">
-      <div className="container d-flex justify-content-between align-items-center btn-sm mb-5 mt-3">
-        <h3 className="text-warning fw-bold my-3 px-2">Projects</h3>
-        <input
-          type="search"
-          placeholder="Search projects..."
-          className="form-control p-3 w-50 rounded-4 outline-none"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <Link
-          className="btn btn-success rounded-4 text-center p-2"
-          href="/projects/new"
-        >
-          <div className="d-flex justify-content-center align-items-center">
-            <Image src="/svg/add.svg" width={24} height={24} alt="Add" />
-            <span className="lead">New</span>
-          </div>
-        </Link>
+    <div className="container-fluid px-3">
+      <div className="d-flex justify-content-between align-items-center mb-4 mt-3">
+        <h3 className="text-warning fw-bold my-3">Projects</h3>
+        <div className="d-flex align-items-center">
+          <input
+            type="search"
+            placeholder="Search projects..."
+            className="form-control p-3 w-50 rounded-4 me-2"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Search projects"
+          />
+          <Link
+            className="btn btn-success rounded-4 text-center p-2"
+            href="/dashboard/projects/new"
+          >
+            <div className="d-flex justify-content-center align-items-center">
+              <Image src="/svg/add.svg" width={24} height={24} alt="Add" />
+              <span className="lead ms-2">New Project</span>
+            </div>
+          </Link>
+        </div>
       </div>
-      <div className="row justify-content-between align-items-center">
+      <div className="row g-4">
         {filtered.length > 0 ? (
           filtered.map((project) => (
-            <div key={project._id} className="col-md-4 mb-4">
+            <div key={project._id} className="col-md-4">
               <Link
                 href={`projects/${project._id}`}
                 className="text-decoration-none"
               >
-                <div className="p-3 bg-secondary text-light rounded-4">
+                <div className="p-4 bg-secondary text-light rounded-4 shadow-sm">
                   <Image
                     src="/svg/database.svg"
                     width={50}
                     height={50}
-                    alt="service"
+                    alt="Project Icon"
                     className="float-start text-warning mx-3 rounded"
                   />
                   <h5 className="text-warning">{project.name}</h5>
-                  <p>{project.description}</p>
+                  <p className="text-muted">{project.description}</p>
                   <p>
                     <strong>Objective:</strong> {project.objective}
                   </p>
@@ -93,5 +96,4 @@ const ProjectList = () => {
     </div>
   );
 };
-
 export default ProjectList;
