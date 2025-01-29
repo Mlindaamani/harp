@@ -1,3 +1,4 @@
+import Register from "@/app/components/MultiStepForm";
 import Image from "next/image";
 import React from "react";
 
@@ -30,6 +31,8 @@ const Chats = () => {
           </div>
         </div>
       </div>
+
+      <Register />
     </div>
   );
 };

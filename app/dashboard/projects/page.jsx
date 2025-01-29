@@ -5,7 +5,6 @@ import { axiosInstance } from "@/app/lib/axiosInstance";
 import { Loading } from "@/app/components/Loading";
 import Link from "next/link";
 import { filteredProjects } from "@/app/lib/utils/functions";
-
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);

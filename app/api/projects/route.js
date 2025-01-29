@@ -51,7 +51,6 @@ export async function GET(req) {
   try {
     // Connect to database
     await connectToMongoDb();
-
     //Retrieve projects
     const projects = await Project.find()
       .sort({ createdAt: "desc" })
@@ -67,9 +66,6 @@ export async function GET(req) {
     );
   }
 }
-
-
-
 
 // import QuestionsList from "@/components/questions-list";
 // import prisma from "@/lib/db";
