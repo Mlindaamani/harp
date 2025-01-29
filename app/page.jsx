@@ -45,6 +45,13 @@ const HarpLandingPage = async () => {
                     >
                       Get Started
                     </Link>
+
+                    <Link
+                      className="btn btn-outline-primary btn-lg px-5 py-3 text-light"
+                      href={"/dashboard"}
+                    >
+                      Became a Pro
+                    </Link>
                   </>
                 )}
               </div>

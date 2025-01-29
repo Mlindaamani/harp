@@ -12,6 +12,8 @@ export default function Register() {
     formState: { errors },
     trigger,
   } = useForm({
+    delayError: 2,
+    reValidateMode: "onChange",
     resolver: yupResolver(registrationSchema),
   });
 
