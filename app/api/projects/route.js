@@ -48,6 +48,7 @@ export async function POST(req) {
 
 // Get all projects
 export async function GET(req) {
+  console.log(req);
   try {
     // Connect to database
     await connectToMongoDb();

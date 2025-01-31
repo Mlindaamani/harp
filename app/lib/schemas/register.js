@@ -1,5 +1,5 @@
 import * as yup from "yup";
-// User registration Schema
+
 export const registrationSchema = yup.object({
   fullname: yup
     .string()

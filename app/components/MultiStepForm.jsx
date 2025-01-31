@@ -12,8 +12,6 @@ export default function Register() {
     formState: { errors },
     trigger,
   } = useForm({
-    delayError: 2,
-    reValidateMode: "onChange",
     resolver: yupResolver(registrationSchema),
   });
 
@@ -24,7 +22,6 @@ export default function Register() {
 
   const nextStep = async () => {
     let isValid = false;
-
     // Validate fields based on the current step
     if (step === 1) {
       // Validate only name and email
@@ -36,25 +33,34 @@ export default function Register() {
       // Validate only cardNumber and expiryDate
       isValid = await trigger(["cardNumber", "expiryDate"]);
     }
+
     if (isValid) {
       // Move to the next step if valid
       setStep(step + 1);
     }
   };
+
   const prevStep = () => setStep(step - 1);
 
   return (
-    <div className="container mt-5 bg-info-subtle rounded-4 p-5">
-      <h1 className="text-center mt-4 mb-5">Service Provider Registration</h1>
+    <div className="container mt-5 bg-dark-subtle rounded-5 p-5">
+      <h3 className="text-center my-5 fw-bold text-secondary">
+        Service Provider Registration
+      </h3>
       <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
         {step === 1 && (
-          <div className="bg-info-subtle p-3 rounded">
-            <h2>Step 1: Personal Information</h2>
+          <div className="bg-primary-subtle p-4 rounded-4 mb-4">
+            <h2 className="text-secondary mb-5">
+              <span className="badge text-bg-secondary rounded-5 fw-bold">
+                1
+              </span>{" "}
+              Personal Information
+            </h2>
             <div className="mb-3">
               <label className="form-label">Full Name</label>
               <input
                 type="text"
-                className={`form-control ${
+                className={`form-control p-3 rounded-4 ${
                   errors.fullname ? "is-invalid" : ""
                 }`}
                 {...register("fullname")}
@@ -70,7 +76,9 @@ export default function Register() {
               <label className="form-label">Email</label>
               <input
                 type="email"
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                className={`form-control p-3 rounded-4 ${
+                  errors.email ? "is-invalid" : ""
+                }`}
                 {...register("email")}
               />
               {errors.email && (
@@ -81,13 +89,19 @@ export default function Register() {
         )}
 
         {step === 2 && (
-          <div className="bg-info-subtle p-3 rounded">
-            <h2>Step 2: Service Details</h2>
+          <div className="bg-primary-subtle p-4 rounded-4 mb-4">
+            <h2 className="text-secondary  mb-5">
+              {" "}
+              <span className="badge text-bg-secondary rounded-5 fw-bold">
+                2
+              </span>{" "}
+              Service Details
+            </h2>
             <div className="mb-3">
               <label className="form-label">Service Type</label>
               <input
                 type="text"
-                className={`form-control ${
+                className={`form-control p-3 rounded-4 ${
                   errors.serviceType ? "is-invalid" : ""
                 }`}
                 {...register("serviceType")}
@@ -103,7 +117,7 @@ export default function Register() {
               <label className="form-label">Experience (Years)</label>
               <input
                 type="number"
-                className={`form-control ${
+                className={`form-control p-3 rounded-4 ${
                   errors.experience ? "is-invalid" : ""
                 }`}
                 {...register("experience")}
@@ -118,13 +132,16 @@ export default function Register() {
         )}
 
         {step === 3 && (
-          <div className="bg-info-subtle p-3 rounded">
-            <h2>Step 3: Payment Information</h2>
+          <div className="bg-primary-subtle p-4 rounded-4 mb-4">
+            <h2 className="text-secondary mb-5">
+              <span className="badge text-bg-success rounded-5 fw-bold">3</span>{" "}
+              Payment Information
+            </h2>
             <div className="mb-3">
               <label className="form-label">Card Number</label>
               <input
                 type="text"
-                className={`form-control ${
+                className={`form-control p-3 rounded-4 ${
                   errors.cardNumber ? "is-invalid" : ""
                 }`}
                 {...register("cardNumber")}
@@ -139,8 +156,8 @@ export default function Register() {
             <div className="mb-3">
               <label className="form-label">Expiry Date</label>
               <input
-                type="text"
-                className={`form-control ${
+                type="date"
+                className={`form-control p-3 rounded-4 ${
                   errors.expiryDate ? "is-invalid" : ""
                 }`}
                 {...register("expiryDate")}
@@ -158,7 +175,7 @@ export default function Register() {
           {step > 1 && (
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-sm btn-secondary py-2 px-5 rounded-5 text-bold"
               onClick={prevStep}
             >
               Back
@@ -167,13 +184,16 @@ export default function Register() {
           {step < 3 ? (
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-sm btn-primary py-2 px-5 rounded-5 text-bold"
               onClick={nextStep}
             >
               Next
             </button>
           ) : (
-            <button type="submit" className="btn btn-success">
+            <button
+              type="submit"
+              className="btn btn-sm btn-success py-2 px-5 rounded-5 text-bold"
+            >
               Submit
             </button>
           )}
