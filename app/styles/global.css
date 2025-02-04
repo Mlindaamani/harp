@@ -8,11 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.sidebar {
-  height: 100vh;
-  background-color: #fff;
+  height: 100%;
 }
 
 .nav-link.active {
@@ -28,12 +24,13 @@ body {
 .overflow-hidden {
   overflow: hidden;
 }
-/* Landing pages */
+
+/* LANDING PAGE */
 .bg-gradient-primary {
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
 }
 
-/* Chat */
+/* CHAT PAGE */
 .bg-gradient-chat {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   border: none;
@@ -43,36 +40,41 @@ body {
   transform: scale(1.05);
 }
 
-/* Client */
+/* CLIENT */
 .bg-gradient-client {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   border: none;
   transition: transform 0.2s ease;
 }
+
 .bg-gradient-client:hover {
   transform: scale(1.05);
 }
 
-/* NavBar */
+/* NAVIGATION BAR */
 .bg-gradient-mlinda {
-  background: linear-gradient(135deg, #6303ca, #2575fc);
+  background: linear-gradient(135deg, #080808dd, #051930);
+  border-radius: 16px;
 }
 .nav-link-mlinda {
   transition: color 0.3s ease, transform 0.2s ease;
 }
+
 .nav-link-mlinda:hover {
   color: #ffc107 !important;
   transform: translateY(-2px);
 }
 
-/* Dash */
+/* DASHBOARD */
 .card-skeleton {
   animation: pulse 1.5s infinite;
 }
+
 .chart-skeleton {
   height: 300px;
   position: relative;
 }
+
 .skeleton-box {
   background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
   height: 100%;
@@ -84,9 +86,11 @@ body {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
@@ -96,7 +100,17 @@ body {
   0% {
     background-position: -200px 0;
   }
+
   100% {
     background-position: 200px 0;
   }
+}
+
+/* LINE CLAMP */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

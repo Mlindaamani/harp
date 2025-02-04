@@ -5,6 +5,7 @@ import { axiosInstance } from "@/app/lib/axiosInstance";
 import { Loading } from "@/app/components/Loading";
 import Link from "next/link";
 import { filteredProjects } from "@/app/lib/utils/functions";
+
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -71,9 +72,9 @@ const ProjectList = () => {
                     alt="Project Icon"
                     className="float-start text-warning mx-3 rounded"
                   />
-                  <h5 className="text-warning">{project.name}</h5>
-                  <p className="text-muted">{project.description}</p>
-                  <p>
+                  <h5 className="text-warning line-clamp">{project.name}</h5>
+                  <p className="text-muted line-clamp">{project.description}</p>
+                  <p className="line-clamp">
                     <strong>Objective:</strong> {project.objective}
                   </p>
                   <p>

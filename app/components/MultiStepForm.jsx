@@ -16,8 +16,8 @@ export default function Register() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    alert("Registration Successful!");
+    const { expiryDate } = data;
+    console.log(expiryDate.localeString());
   };
 
   const nextStep = async () => {
@@ -68,6 +68,7 @@ export default function Register() {
               {errors.fullname && (
                 <div className="invalid-feedback">
                   {errors.fullname.message}
+                  {console.log("The only panel that will printent")}
                 </div>
               )}
             </div>

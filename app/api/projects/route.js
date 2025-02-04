@@ -1,5 +1,6 @@
 import { connectToMongoDb } from "@/app/lib/db";
 import { Project } from "@/app/lib/models/Project";
+import { error } from "console";
 import { NextResponse } from "next/server";
 
 // Create a new project
@@ -48,7 +49,6 @@ export async function POST(req) {
 
 // Get all projects
 export async function GET(req) {
-  console.log(req);
   try {
     // Connect to database
     await connectToMongoDb();
@@ -67,6 +67,23 @@ export async function GET(req) {
     );
   }
 }
+
+export const getVideoById = async () => {
+  // Get video id from the query string
+  const { videoId } = await params;
+  //GET mondodb instamce for a paticular video
+  const video = Project.findById({ _id: videoId }).sort({
+    name: "Kodack-ft-Gicci Mane",
+  });
+
+  if (video) {
+    return Response.json({ data }).status(200);
+  } else {
+    return Response.json({
+      error: "The video could not be found in the object storage",
+    }).status(404);
+  }
+};
 
 // import QuestionsList from "@/components/questions-list";
 // import prisma from "@/lib/db";

@@ -6,6 +6,7 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import HomePage from "./components/TUsage";
 
 const HarpLandingPage = async () => {
   const { isAuthenticated } = getKindeServerSession();
@@ -26,6 +27,7 @@ const HarpLandingPage = async () => {
                 Find trusted professionals for all your household repair needs.
                 Fast, reliable, and hassle-free.
               </p>
+
               <div className="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-start gap-3">
                 {!isLoggen ? (
                   <>
@@ -54,6 +56,9 @@ const HarpLandingPage = async () => {
                     </Link>
                   </>
                 )}
+              </div>
+              <div className="mt-5 p-3">
+                <HomePage />
               </div>
             </div>
             <div className="col-lg-4 mt-5 mt-lg-0 text-center">

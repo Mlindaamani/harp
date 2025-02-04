@@ -1,6 +1,6 @@
-import Register from "@/app/components/MultiStepForm";
 import Image from "next/image";
 import React from "react";
+import Register from "@/app/components/Register";
 
 const Chats = () => {
   return (

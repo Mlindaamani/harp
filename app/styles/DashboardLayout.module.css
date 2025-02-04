@@ -1,0 +1,37 @@
+/* DashboardLayout.module.css */
+.container-fluid {
+  height: 100vh; /* Full viewport height */
+}
+
+.dashboardRow {
+  height: 100%; /* Ensure the row takes full height */
+}
+
+.sidebar {
+  height: 100%; /* Full height for the sidebar */
+  position: sticky; /* Keep it fixed while scrolling */
+  top: 0; /* Stick to the top */
+}
+
+.mainContent {
+  height: 100%; /* Ensure the main content area takes full height */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+@media (max-width: 768px) {
+  .dashboardRow {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+
+  .sidebar {
+    height: 100%; /* Full height for the sidebar */
+    position: sticky; /* Keep it fixed while scrolling */
+    top: 0; /* Stick to the top */
+    width: 100%;
+    height: auto;
+  }
+
+  .mainContent {
+    width: 100%; /* Full width on small screens */
+  }
+}

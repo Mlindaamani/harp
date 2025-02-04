@@ -4,9 +4,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="d-flex gap-5 justify-content-between align-items-center bg-light p-5 rounded-4 mt-3">
-        <div>
-          <h1 className="text-warning">Analytics</h1>
-        </div>
+        <h1 className="text-secondary">Analytics</h1>
 
         {/* Analytics Cards */}
         <div className="d-flex gap-5 justify-content-between align-items-center">
@@ -31,13 +29,13 @@ const Dashboard = () => {
           <div className="col-lg-8 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Total Income</h4>
-              <div className="skeleton-box large" />
+              <div className="skeleton-box large rounded-5" />
             </div>
           </div>
           <div className="col-lg-4 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Service Provider Avaliability</h4>
-              <div className="skeleton-box small" />
+              <div className="skeleton-box small rounded-5" />
             </div>
           </div>
         </div>
@@ -45,13 +43,13 @@ const Dashboard = () => {
           <div className="col-lg-4 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Most Visited Locations</h4>
-              <div className="skeleton-box small" />
+              <div className="skeleton-box small rounded-5" />
             </div>
           </div>
           <div className="col-lg-8 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Household Reached</h4>
-              <div className="skeleton-box large" />
+              <div className="skeleton-box large rounded-5" />
             </div>
           </div>
         </div>
@@ -59,13 +57,13 @@ const Dashboard = () => {
           <div className="col-lg-8 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Total Clients</h4>
-              <div className="skeleton-box large" />
+              <div className="skeleton-box large rounded-5" />
             </div>
           </div>
           <div className="col-lg-4 col-md-12">
             <div className="chart-skeleton bg-light rounded-4 p-4">
               <h4 className="text-muted">Total Revenue</h4>
-              <div className="skeleton-box small" />
+              <div className="skeleton-box small rounded-4" />
             </div>
           </div>
         </div>

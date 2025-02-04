@@ -26,7 +26,7 @@ const NewProject = () => {
       });
 
       // Navigate to the newly created project
-      router.push(`/projects/${project._id}`);
+      router.push(`/dashboard/projects/${project._id}`);
     } catch (error) {
       toast.error(error.message, {
         duration: 4000,
