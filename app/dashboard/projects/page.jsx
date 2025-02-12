@@ -5,6 +5,7 @@ import { axiosInstance } from "@/app/lib/axiosInstance";
 import { Loading } from "@/app/components/Loading";
 import Link from "next/link";
 import { filteredProjects } from "@/app/lib/utils/functions";
+import { EmptySearchResult } from "@/app/components/EmptySearch";
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
@@ -85,12 +86,7 @@ const ProjectList = () => {
             </div>
           ))
         ) : (
-          <div className="col-12 text-center mt-5">
-            <p className="text-secondary rounded-4">
-              No projects found for{" "}
-              <span className="fw-bold">{searchTerm}</span>
-            </p>
-          </div>
+          <EmptySearchResult searchTerm={searchTerm} />
         )}
       </div>
     </div>

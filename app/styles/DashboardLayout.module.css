@@ -1,37 +1,36 @@
-/* DashboardLayout.module.css */
 .container-fluid {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
 .dashboardRow {
-  height: 100%; /* Ensure the row takes full height */
+  height: 100%;
 }
 
 .sidebar {
-  height: 100%; /* Full height for the sidebar */
-  position: sticky; /* Keep it fixed while scrolling */
-  top: 0; /* Stick to the top */
+  height: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .mainContent {
-  height: 100%; /* Ensure the main content area takes full height */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  height: 100%;
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
   .dashboardRow {
-    flex-direction: column; /* Stack vertically on small screens */
+    flex-direction: column;
   }
 
   .sidebar {
-    height: 100%; /* Full height for the sidebar */
-    position: sticky; /* Keep it fixed while scrolling */
-    top: 0; /* Stick to the top */
+    height: 100%;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: auto;
   }
 
   .mainContent {
-    width: 100%; /* Full width on small screens */
+    width: 100%;
   }
 }

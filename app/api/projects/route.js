@@ -1,6 +1,5 @@
 import { connectToMongoDb } from "@/app/lib/db";
 import { Project } from "@/app/lib/models/Project";
-import { error } from "console";
 import { NextResponse } from "next/server";
 
 // Create a new project

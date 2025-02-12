@@ -1,8 +1,5 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import { Project } from "../lib/models/Project";
-import { set } from "mongoose";
 
 export const Typewriter = ({
   texts,
@@ -51,24 +48,3 @@ export const Typewriter = ({
 
   return <span className="text-light fw-bold">{currentText}</span>;
 };
-
-// Testing
-// const texts = ["Hello", "World", "React"];
-// let loopNum = 0;
-
-// // First iteration:
-// let i = loopNum % texts.length; // 0 % 3 = 0 → i = 0 (first text: "Hello")
-
-// // Second iteration:
-// loopNum++;
-// i = loopNum % texts.length; // 1 % 3 = 1 → i = 1 (second text: "World")
-
-// // Third iteration:
-// loopNum++;
-// i = loopNum % texts.length; // 2 % 3 = 2 → i = 2 (third text: "React")
-
-// // Fourth iteration:
-// loopNum++;
-// i = loopNum % texts.length; // 3 % 3 = 0 → i = 0 (back to the first text: "Hello")
-
-// string.substring(startIndex, endIndex);

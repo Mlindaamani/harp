@@ -24,7 +24,7 @@ export const Navbar = async () => {
             alt="Profile Picture"
             className="rounded-circle me-2"
           />
-          <span className="fw-bold">Harp</span>
+          <span className="lead">{user?.given_name}</span>
         </Link>
 
         {/* Toggle Button for Mobile */}

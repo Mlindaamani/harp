@@ -1,4 +1,3 @@
-import { AuthProvider } from "./provider/AuthProvider";
 import "./styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

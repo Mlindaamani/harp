@@ -26,6 +26,6 @@ const projectsSchema = Schema(
   { timestamps: true }
 );
 
-// I am using a Singleton pattern to avoid overwriting the model
+// I am using a Singleton pattern to avoid overwriting the Project Model.
 export const Project =
   mongoose.models.Project || model("Project", projectsSchema);

@@ -31,7 +31,6 @@ const Chats = () => {
           </div>
         </div>
       </div>
-
       <Register />
     </div>
   );
